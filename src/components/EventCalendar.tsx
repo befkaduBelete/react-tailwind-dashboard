@@ -42,12 +42,12 @@ const EventCalendar = () => {
             </div>
             <div className='flex flex-col'>
                 {events.map(event => (
-                    <div key={event.id} className='border-2 border-gray-100 border-t-4 p-5 odd:border-t-lamaSky even:border-t-lamaYellow'>
+                    <div key={event.id} className='border-2 border-gray-100 border-t-4 p-5 odd:border-t-lamaSky even:border-t-lamaPurpleLight rounded-lg mt-2'>
                         <div className='flex items-center justify-between'>
-                            <h1>{event.title}</h1>
-                            <span>{event.time}</span>
+                            <h1 className='font-semibold text-gray-600'>{event.title}</h1>
+                            <span className='text-xs text-gray-300'>{event.time}</span>
                         </div>
-                        <p>{event.description}</p>
+                        <p className='mt-2 text-sm text-gray-400'>{event.description}</p>
                     </div>
                 ))}
             </div>
