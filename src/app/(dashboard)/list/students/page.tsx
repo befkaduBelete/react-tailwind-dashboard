@@ -1,19 +1,19 @@
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
-import { role, teachersData } from '@/lib/data'
+import { role, studentsData, teachersData } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 type Teacher = {
     id: number;
-    teacherId: string;
+    studentId: string;
     name: string;
     email?: string;
     photo: string;
     phone: string;
-    subjects: string[];
-    classes: string[];
+    grade: string;
+    class: string;
     address: string
 }
 const columns = [
@@ -22,18 +22,18 @@ const columns = [
         accessor: "info"
     },
     {
-        header: "Teacher ID",
-        accessor: "teacherId",
+        header: "Student ID",
+        accessor: "studentId",
         className: "hidden md:table-cell"
     },
     {
-        header: "Subject ",
-        accessor: "subject",
+        header: "Grade ",
+        accessor: "grade",
         className: "hidden md:table-cell"
     },
     {
-        header: "Classes ",
-        accessor: "classes",
+        header: "Class ",
+        accessor: "class",
         className: "hidden md:table-cell"
     },
     {
@@ -63,9 +63,9 @@ const TeachersListPage = () => {
                     <p className='text-sm text-gray-500'>{item.email}</p>
                 </div>
             </td>
-            <td className='hidden md:table-cell'>{item.teacherId}</td>
-            <td className='hidden md:table-cell'>{item.subjects.join(",")}</td>
-            <td className='hidden md:table-cell'>{item.classes.join(",")}</td>
+            <td className='hidden md:table-cell'>{item.studentId}</td>
+            <td className='hidden md:table-cell'>{item.class}</td>
+            <td className='hidden md:table-cell'>{item.grade}</td>
             <td className='hidden md:table-cell'>{item.phone}</td>
             <td className='hidden md:table-cell'>{item.address}</td>
             <td>
@@ -89,7 +89,7 @@ const TeachersListPage = () => {
         <div className='bg-white p-4 rounded-md m-4 mt-0 flex-1'>
             {/* TOP  */}
             <div className='flex items-center justify-between'>
-                <h1 className='hidden md:block text-lg font-semibold'>All Teachers</h1>
+                <h1 className='hidden md:block text-lg font-semibold'>All Students</h1>
                 <div className='flex flex-col md:flex-row gap-2 w-full md:w-auto'>
                     <TableSearch />
                     <div className='flex items-center gap-1 self-end'>
@@ -109,7 +109,7 @@ const TeachersListPage = () => {
             </div>
             {/* LIST */}
             <div className='w-full'>
-                <Table columns={columns} renderRow={renderRow} data={teachersData} />
+                <Table columns={columns} renderRow={renderRow} data={studentsData} />
             </div>
             <Pagination />
         </div>
