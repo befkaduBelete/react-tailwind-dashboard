@@ -27,33 +27,39 @@ export const menuItem = [
                 visible: ["admin", "teacher"],
             },
             {
+                icon: "/subject.png",
+                label: "Subject",
+                href: "/list/subjects",
+                visible: ["admin", "teacher"],
+            },
+            {
                 icon: "/class.png",
                 label: "Classes",
-                href: "/classes",
+                href: "/list/classes",
                 visible: ["admin", "teacher"],
             },
             {
                 icon: "/lesson.png",
                 label: "Lessons",
-                href: "/lessons",
+                href: "/list/lessons",
                 visible: ["admin", "teacher"],
             },
             {
                 icon: "/exam.png",
                 label: "Exams",
-                href: "/exams",
+                href: "/list/exams",
                 visible: ["admin", "teacher", "student", "parent"],
             },
             {
                 icon: "/assignment.png",
                 label: "Assignments",
-                href: "/assignments",
+                href: "/list/assignments",
                 visible: ["admin", "teacher", "student", "parent"],
             },
             {
                 icon: "/result.png",
                 label: "Results",
-                href: "/results",
+                href: "/list/results",
                 visible: ["admin", "teacher", "student", "parent"],
             },
             {
@@ -65,7 +71,7 @@ export const menuItem = [
             {
                 icon: "/calendar.png",
                 label: "Events",
-                href: "/events",
+                href: "/list/events",
                 visible: ["admin", "teacher", "student", "parent"],
             },
             {
@@ -77,7 +83,7 @@ export const menuItem = [
             {
                 icon: "/announcement.png",
                 label: "Announcements",
-                href: "announcements",
+                href: "/list/announcements",
                 visible: ["admin", "teacher", "student", "parent"],
             }
         ]
