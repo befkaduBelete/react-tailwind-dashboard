@@ -1,7 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+interface props {
+    type: string;
+    total: number
+}
 
-const UserCard = ({ type, total }: { type: string, total: number }) => {
+const UserCard = ({ type, total }: props) => {
     return (
         <div className='rounded-2xl odd:bg-lamaPurpleLight even:bg-lamaYellow p-4 flex-1 min-w-[130px]'>
 

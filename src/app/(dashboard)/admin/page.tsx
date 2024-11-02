@@ -12,7 +12,7 @@ const AdminPage = () => {
             {/* LEFT */}
             <div className='w-full lg:w-2/3  flex-col gap-8'>
                 <div className='flex gap-3 justify-between flex-wrap'>
-                    <UserCard type='Students' total={2000} />
+                    <UserCard type='{ 34}' total={4545} />
                     <UserCard type='Teachers' total={2000} />
                     <UserCard type='Parents' total={2000} />
                     <UserCard type='Staffs' total={2000} />

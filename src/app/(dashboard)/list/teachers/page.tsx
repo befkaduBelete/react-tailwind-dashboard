@@ -1,3 +1,5 @@
+import FormModal from '@/components/FormModal'
+import FormModalT from '@/components/FormModalT'
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
@@ -71,15 +73,21 @@ const TeachersListPage = () => {
             <td>
                 <div className=''>
                     <Link href={`/list/teachers/${item.id}`}>
-                        <button className='w-7 h-7 items-center justify-center rounded-full bg-lamaSky p-2'>
+                        {role === "admin" && (
+                            <FormModal table='teacher' type='update' id={item.id} />
+                        )}
+                        {/* <button className='w-7 h-7 items-center justify-center rounded-full bg-lamaSky p-2'>
                             <Image src="/view.png" height={16} width={16} alt='' />
-                        </button>
+                        </button> */}
                     </Link>
 
-                    {role === "admin" && (<button className='w-7 h-7 items-center justify-center rounded-full bg-lamaPurpleLight p-2'>
+                    {/* {role === "admin" && (<button className='w-7 h-7 items-center justify-center rounded-full bg-lamaPurpleLight p-2'>
                         <Image src="/delete.png" height={14} width={14} alt='' />
-                    </button>)}
+                    </button>)} */}
 
+                    {role === "admin" && (
+                        <FormModal table='teacher' type='delete' id={item.id} />
+                    )}
                 </div>
             </td>
         </tr>
@@ -99,10 +107,14 @@ const TeachersListPage = () => {
                         <button className='items-center justify-center w-8 h-8 rounded-full bg-lamaYellow p-2'>
                             <Image src="/sort.png" alt='' width={14} height={14} />
                         </button>
+                        <FormModalT type='create' table='teacher' />
+                        {role === "admin" && (
+                            <FormModal table='teacher' type='create' />
+                        )}
 
-                        <button className='items-center justify-center w-8 h-8 rounded-full bg-lamaYellow p-2'>
+                        {/* <button className='items-center justify-center w-8 h-8 rounded-full bg-lamaYellow p-2'>
                             <Image src="/plus.png" alt='' width={14} height={14} />
-                        </button>
+                        </button> */}
 
                     </div>
                 </div>

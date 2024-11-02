@@ -1,12 +1,11 @@
 import Announcements from '@/components/Announcements'
 import BigCalendar from '@/components/BigCalendar'
-import FormModal from '@/components/FormModal'
 import Performance from '@/components/Performance'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const SingleTeacherPage = () => {
+const SingleStudentsPage = () => {
     return (
         <div className='flex-1 flex gap-4 flex-col xl:flex-row p-4'>
             {/* LEFT */}
@@ -19,27 +18,7 @@ const SingleTeacherPage = () => {
                             <Image src="/avatar.png" alt='User Logo' height={144} width={144} className='w-36 h-36 rounded-full object-cover' />
                         </div>
                         <div className='w-2/3 p-2'>
-                            <div className='flex  gap-3'>
-                                <h1 className='text-xl font-semibold'>Tena Belete</h1>
-                                <FormModal table='teacher' type='update'
-                                    data={
-                                        {
-                                            id: 1,
-                                            username: "Username",
-                                            email: "email@gmail.com",
-                                            password: "pssword",
-                                            firstName: "Name",
-                                            lastName: "Name",
-                                            phone: "+251946334153",
-                                            address: "address",
-                                            bloodType: "A+",
-                                            deteOfBirth: "2000-02-02",
-                                            sex: "male",
-                                            img: ""
-                                        }
-                                    }
-                                />
-                            </div>
+                            <h1 className='text-xl font-semibold'>Tena Belete</h1>
                             <p className='text-sm text-gray-500'> He is a teacher having MSC in computer Sceince</p>
                             <div className='flex items-center justify-between gap-2 flex-wrap text-xs font-medium'>
                                 <div className='flex items-center gap-2 w-full md:w-1/3 lg:w-full 2xl:w-1/3'>
@@ -123,4 +102,4 @@ const SingleTeacherPage = () => {
     )
 }
 
-export default SingleTeacherPage
+export default SingleStudentsPage
